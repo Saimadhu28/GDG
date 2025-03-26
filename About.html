@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title >About Us - E-Waste Crisis</title>
+    <link rel="stylesheet" href="About.css">
+    <link rel="icon" type="image/png" href="Logo.jpeg">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+            <li><a href="Home_Page.html">Home</a></li>
+            <li><a href="About.html">About</a></li>
+            <li><a href="AI-Scanner.html">AI Scanner</a></li>
+            <li><a href="Centers.html">Recycling Centers</a></li>
+            <li><a href="Game.html">Gamification</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="header1">
+        <h1 style="color: black;">About Us</h1>
+    </div>
+    <section class="about">
+        <div class="container">
+            <h2>Who We Are</h2>
+            <p>At <strong>E-Waste Crisis</strong>, we are passionate about creating a sustainable future by tackling one of the fastest-growing environmental threats—electronic waste.</p>
+        </div>
+    </section>
+    <section class="mission">
+        <div class="container">
+            <h2>Our Mission</h2>
+            <p>We aim to raise awareness about the e-waste crisis and provide an <strong>easy, accessible, and tech-driven approach to recycling</strong>. By integrating AI technology and gamification, we make recycling electronic waste engaging and impactful.</p>
+        </div>
+    </section>
+    <section class="features">
+        <div class="container">
+            <h2>How We Help</h2>
+            <ul>
+                <li>🚀 <strong>AI-Powered E-Waste Scanner</strong> – Identify and classify e-waste instantly.</li>
+                <li>♻ <strong>Find Nearby Recycling Centers</strong> – Locate authorized e-waste disposal sites near you.</li>
+                <li>🏆 <strong>Gamification & Rewards</strong> – Earn points and rewards for responsible recycling.</li>
+                <li>🌱 <strong>Sustainable Future</strong> – Join us in reducing e-waste.</li>
+            </ul>
+        </div>
+    </section>
+    <section class="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>Have questions or want to collaborate? Reach out to us!</p>
+            <p>Email: support@ewastecrisis.com</p>
+            <p>Phone: +123-456-7890</p>
+        </div>
+    </section>
+    <section class="cta">
+        <div class="container">
+            <h2>Join the Movement!</h2>
+            <p style="color: black;">Every small action counts. Recycle your old devices, spread awareness, or participate in our gamified challenges to make a difference.</p>
+            <a href="#" class="btn">Get Started</a>
+        </div>
+    </section>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const containers = document.querySelectorAll(".container");
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("show");
+                        entry.target.classList.remove("hide");
+                    } else {
+                        if (entry.boundingClientRect.top > 0) {
+                            entry.target.classList.add("hide");
+                        }
+                    }
+                });
+            }, { threshold: 0.2 });
+            containers.forEach(container => {
+                observer.observe(container);
+            });
+        });
+    </script>
+</body>
+</html>

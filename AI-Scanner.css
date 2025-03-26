@@ -1,0 +1,141 @@
+body {
+    background: url('E-waste.jpeg') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Arial Black", sans-serif;
+}
+:root{
+    --color:white;
+    --bcolor:rgba(0, 0, 0, 0.8);
+}
+
+header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 20; 
+    background-color: var(--bcolor);
+}
+
+nav{
+    background-color: var(--bcolor);
+    width: 100%;
+    position: sticky;
+    top:0;
+    z-index: 15;
+    padding: 15px 0;
+}
+nav ul{
+    display: flex;
+    justify-content: center;
+    gap:1.1rem;
+    flex-wrap: wrap;
+}
+nav ul li{
+    list-style: none;
+    display: inline;
+    opacity: 0;  
+    transform: translateX(-100px); 
+    animation: animation2 0.3s ease-out forwards;
+}
+nav ul li a{
+    text-decoration: none;
+    color: var(--color);
+    font-size: 1rem;
+    padding: 10px 15px;
+    font-weight: bolder;
+}
+
+nav ul li a:hover {
+    border-bottom:2px solid white;
+    animation: myanimation 0.2s ease-out forwards;
+}
+
+nav ul li:nth-child(1) { animation-delay: 0.2s; }
+nav ul li:nth-child(2) { animation-delay: 0.4s; }
+nav ul li:nth-child(3) { animation-delay: 0.6s; }
+nav ul li:nth-child(4) { animation-delay: 0.8s; }
+nav ul li:nth-child(5) { animation-delay: 1s; }
+nav ul li:nth-child(6) { animation-delay: 1.2s; }
+
+@keyframes animation2 {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes myanimation {
+    0%{
+
+    }
+    25%{
+        font-size: medium;
+       
+    }
+    50%{
+        font-size: large;
+    }
+    100%{
+        font-size: larger;
+    }
+}
+.scanner-container {
+    text-align: center;
+    padding: 50px;
+    background: white;
+    max-width: 600px;
+    margin: 30px auto;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.scanner-input {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+input[type="file"], input[type="text"], button {
+    padding: 10px;
+    font-size: 16px;
+}
+
+button {
+    background: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #218838;
+}
+
+#loading {
+    margin-top: 20px;
+    font-weight: bold;
+    color: #007bff;
+}
+
+.hidden {
+    display: none;
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #333;
+}
+

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recycling Centers</title>
+    <link rel="stylesheet" href="centers.css">
+    <link rel="icon" type="image/png" href="Logo.jpeg">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+            <li><a href="Home_Page.html">Home</a></li>
+            <li><a href="About.html">About</a></li>
+            <li><a href="AI-Scanner.html">AI Scanner</a></li>
+            <li><a href="Centers.html">Recycling Centers</a></li>
+            <li><a href="Game.html">Gamification</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="container">
+        <h1>♻️ Find a Recycling Center Near You ♻️</h1>
+        <p>Dispose of your e-waste responsibly by visiting one of these centers.</p>
+        
+        <div class="search-bar">
+            <input type="text" id="search" onkeyup="searchCenters()" placeholder="Search by city...">
+        </div>
+
+        <div class="center-card" data-city="new york">🏢 Green Earth Recycling - New York, NY 📞 (212) 555-1234</div>
+        <div class="center-card" data-city="los angeles">🌱 EcoSave Center - Los Angeles, CA 📞 (310) 555-5678</div>
+        <div class="center-card" data-city="chicago">🔋 Tech Renew Hub - Chicago, IL 📞 (312) 555-8765</div>
+        <div class="center-card" data-city="austin">💻 Digital Detox Recycling - Austin, TX 📞 (512) 555-4321</div>
+        <div class="center-card" data-city="san francisco">🌍 EarthCycle Center - San Francisco, CA 📞 (415) 555-9876</div>
+        <div class="center-card" data-city="miami">⚡ E-Waste Solutions - Miami, FL 📞 (305) 555-3456</div>
+    </div>
+    
+    <script>
+        function searchCenters() {
+            let input = document.getElementById("search").value.toLowerCase();
+            let cards = document.querySelectorAll(".center-card");
+            
+            cards.forEach(card => {
+                let city = card.getAttribute("data-city");
+                if (city.includes(input)) {
+                    card.style.display = "block";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+        }
+    </script>
+</body>
+</html>

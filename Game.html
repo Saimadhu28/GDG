@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gamification - E-Waste Challenge</title>
+   <link rel="stylesheet" href="Game.css">
+   <link rel="icon" type="image/png" href="Logo.jpeg">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+            <li><a href="Home_Page.html">Home</a></li>
+            <li><a href="About.html">About</a></li>
+            <li><a href="AI-Scanner.html">AI Scanner</a></li>
+            <li><a href="Centers.html">Recycling Centers</a></li>
+            <li><a href="Game.html">Gamification</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="game-container">
+        <h1>🌍 E-Waste Recycling Challenge 🌱</h1>
+        <p>Complete tasks, earn points, and become an E-Waste Hero! 💪</p>
+        
+        <div class="task-card" onclick="earnPoints(10)">📱 Recycle an old smartphone (10 points)</div>
+        <div class="task-card" onclick="earnPoints(15)">💻 Donate unused electronics (15 points)</div>
+        <div class="task-card" onclick="earnPoints(20)">🧠 Take an E-Waste Awareness Quiz (20 points)</div> 
+        <div id="score">Your Score: 0</div>
+    </div>
+    
+    <script>
+        let score = 0;
+        function earnPoints(points) {
+            score += points;
+            document.getElementById("score").innerText = "Your Score: " + score;
+            alert("🎉 Well done! You earned " + points + " points.");
+        }
+    </script>
+</body>
+</html>

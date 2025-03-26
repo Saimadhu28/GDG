@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI E-Waste Scanner</title>
+    <link rel="stylesheet" href="AI-Scanner.css">
+    <link rel="icon" type="image/png" href="Logo.jpeg">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+            <li><a href="Home_Page.html">Home</a></li>
+            <li><a href="About.html">About</a></li>
+            <li><a href="AI-Scanner.html">AI Scanner</a></li>
+            <li><a href="Centers.html">Recycling Centers</a></li>
+            <li><a href="Game.html">Gamification</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="scanner-container">
+        <h1>AI E-Waste Scanner</h1>
+        <p>Upload an image or describe your electronic waste to get recycling suggestions.</p>
+        
+        <div class="scanner-input">
+            <input type="file" id="imageUpload" accept="image/*">
+            <input type="text" id="textInput" placeholder="Describe your e-waste (e.g., old mobile phone)">
+            <button id="scanBtn">Scan</button>
+        </div>
+            <div id="loading" class="hidden">Analyzing...</div>
+            <div id="result"></div>
+    </main>
+
+</body>
+</html>
