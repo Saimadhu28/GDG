@@ -11,12 +11,12 @@
     <header>
         <nav>
             <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="About.html">About</a></li>
-            <li><a href="AI-Scanner.html">AI Scanner</a></li>
-            <li><a href="Centers.html">Recycling Centers</a></li>
-            <li><a href="Game.html">Gamification</a></li>
-            <li><a href="Contact.html">Contact</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="About.html">About</a></li>
+                <li><a href="AI-Scanner.html">AI Scanner</a></li>
+                <li><a href="Centers.html">Recycling Centers</a></li>
+                <li><a href="Game.html">Gamification</a></li>
+                <li><a href="Contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -26,7 +26,7 @@
         <p>Dispose of your e-waste responsibly by visiting one of these centers.</p>
         
         <div class="search-bar">
-            <input type="text" id="search" onkeyup="searchCenters()" placeholder="Search by city...">
+            <input type="text" id="search" placeholder="Search by city...">
         </div>
 
         <div class="center-card" data-city="new york">🏢 Green Earth Recycling - New York, NY 📞 (212) 555-1234</div>
@@ -38,19 +38,31 @@
     </div>
     
     <script>
-        function searchCenters() {
-            let input = document.getElementById("search").value.toLowerCase();
-            let cards = document.querySelectorAll(".center-card");
-            
-            cards.forEach(card => {
-                let city = card.getAttribute("data-city");
-                if (city.includes(input)) {
-                    card.style.display = "block";
-                } else {
-                    card.style.display = "none";
-                }
+        document.addEventListener("DOMContentLoaded", function() {
+            let searchInput = document.getElementById("search");
+
+            searchInput.addEventListener("keyup", function() {
+                let input = searchInput.value.toLowerCase();
+                console.log("User Input:", input); // Debugging Log
+
+                let cards = document.querySelectorAll(".center-card");
+                
+                cards.forEach(card => {
+                    let city = card.getAttribute("data-city");
+                    
+                    if (city) {
+                        city = city.toLowerCase();
+                        console.log("Checking city:", city); 
+
+                        if (city.includes(input)) {
+                            card.style.display = "block";
+                        } else {
+                            card.style.display = "none";
+                        }
+                    }
+                });
             });
-        }
+        });
     </script>
 </body>
 </html>
